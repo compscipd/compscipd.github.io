@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="author" content="Justin Landfried" />
+    <title>TeacherTools</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+		background-repeat: no-repeat;
+		outline: none;
+	}
+	.tab-pane{
+		position: absolute;
+		left: 0px;
+		top: 42px;
+		right: 0px;
+		bottom: 0px;
+		overflow: hidden;
+	}
+	.desk{
+		position: absolute;
+		border: 2px solid;
+		width: 100px;
+		height: 104px;
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+	
+	#desk_num{
+		position: absolute;
+		left: 36px;
+		top: 58px;
+		height:24px;
+		width:24px;
+		line-height: 24px;
+		border-radius:50%;
+		-moz-border-radius:50%;
+		-webkit-border-radius:50%;
+		background-color: #FFF;
+		text-align: center;
+	}
+	
+	#name_box{
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		background-color: #FFF;
+		color: #4f9d66;
+		font-weight: bold;
+	}
+	
+	#notes{
+		background-color: #09093b;
+		width: 50%;
+		height: 20px;
+		float:left;
+		text-align: left;
+		color: #fff;
+	}
+	
+	#lanyard{
+		background-color: #8e0700;
+		width: 50%;
+		height: 20px;
+		float:right;
+		text-align: right;
+		color: #fff;
+		
+	}
+
+	#expo{
+		background-color: #565695;
+		width: 50%;
+		height: 20px;
+		float:left;
+		text-align: left;
+		color: #fff;
+	}
+	
+	#tidy{
+		background-color: #8080b3;
+		width: 50%;
+		height: 20px;
+		float:right;
+		text-align: right;
+		color: #fff;
+	}
+	
+	#hw{
+		background-color: #09093b;
+		width: 50%;
+		height: 20px;
+		float:left;
+		text-align: left;
+		color: #fff;
+	}
+	
+	#phone{
+		background-color: #5B64A8;
+		width: 50%;
+		height: 20px;
+		float:right;
+		text-align: right;
+		color: #fff;
+	}
+
+	.redbg{
+		background-color: #8e0700 !important;
+	}
+	
+	.greenBorder{
+		border-color: #73AD21 !important;
+	}
+	
+	.redBorder{
+		border-color: #ff0000 !important;
+	}
+	.yellowBorder{
+		border-color: #ffff00 !important;
+	}
+	</style>
+  </head>
+  <body>
+      <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#roster" aria-controls="roster" role="tab" data-toggle="tab">Roster</a></li>
+		<li role="presentation"><a href="#attendance" aria-controls="attendance" role="tab" data-toggle="tab">Attendance</a></li>
+		<li role="presentation"><a href="#gradebook" aria-controls="gradebook" role="tab" data-toggle="tab">Gradebook</a></li>
+		<li role="presentation"><a href="#callout" aria-controls="callout" role="tab" data-toggle="tab">Callout</a></li>
+	  </ul>
+
+	    <!-- Tab panes -->
+	  <div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="roster">
+
+		<div data-deskid='30' class='desk' style='left: 50px; top: 50px'>
+			<div id="desk_num">30</div>
+			<div id="name_box">Justin<br>Landfried</div>
+			<div id="notes">Notes</div>
+			<div id="lanyard">Lanyard</div>
+			<div id="expo">Expo</div>
+			<div id="tidy">Tidy</div>
+			<div id="hw">HW</div>
+			<div id="phone">Phone</div>
+			
+		</div>
+
+
+		<div data-deskid='30' class='desk' style='left: 50px; top: 50px'>
+			<div id="desk_num">30</div>
+			<div id="name_box">
+				<p>Justin Landfried</p>
+			</div>
+			
+		</div>
+		
+		</div>
+		<div role="tabpanel" class="tab-pane" id="attendance">2</div>
+		<div role="tabpanel" class="tab-pane" id="gradebook">3</div>
+		<div role="tabpanel" class="tab-pane" id="callout">4</div>
+	  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	$(function() {
+	$( ".desk" ).draggable();
+	/*
+		$.post("getRosterPos.php", function(data){
+			$("#roster").html(data);
+			
+			$( ".desk" ).draggable({
+				containment: "parent",
+				stop: function( event, ui ) {
+					var deskid = $(this).attr('data-deskid');
+					var xpos = ui.position.left;
+					var ypos = ui.position.top;
+					$.post("setRosterPos.php", {deskid:deskid, xpos:xpos, ypos:ypos},function(data){
+					
+					});
+				}
+			});
+			
+		});*/
+	
+	
+		
+		
+		$("a[aria-controls='attendance']").click(function() {
+			$("#attendance").html($("#roster").html());
+			$("#attendance .desk").on("click", function(){
+				$this = $(this);
+				if ($this.hasClass("greenBorder")){
+					$this.switchClass("greenBorder", "redBorder");
+					var position = $this.position();
+					//alert(position.left);
+				}
+				else if ($this.hasClass("redBorder")) {
+					$(this).switchClass("redBorder", "yellowBorder");
+				}
+				else if ($this.hasClass("yellowBorder")) {
+					$(this).switchClass("yellowBorder", "greenBorder");
+				}
+				
+			})
+
+		});
+		
+		
+	});
+	</script>
+  </body>
+</html>
